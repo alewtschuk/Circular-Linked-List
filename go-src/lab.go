@@ -2,6 +2,10 @@ package lab
 
 import "unsafe"
 
+// #include <stdlib.h>
+// #include <stdbool.h>
+import "C"
+
 // A node in the list
 type Node struct {
 	data unsafe.Pointer // Pointer to represent the data in the node. Equivalent to *void in C
