@@ -4,7 +4,7 @@ This project is a circular linked list implementation translated from C into Go.
 Steps to configure, build, run, and test the project.
 
 ## Building and Testing
-Please test and build the project using the command:
+Please cd into the `go-src` directory to test and build the project using the command:
 
 ```bash
 make

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"testing"
 	"unsafe"
 )
@@ -156,6 +157,9 @@ func TestInvalidIndex(t *testing.T) {
 	if lst.Size != 5 {
 		t.Fatalf("List size should remain unchanged after invalid index removal")
 	}
+	if removedData == nil {
+		fmt.Println("OUTPUT: Invalid index removal returned nil as expected")
+	}
 }
 
 // Test finding an element in the list
@@ -195,6 +199,7 @@ func TestRemoveAll(t *testing.T) {
 	}
 }
 
+// ADDED TESTS
 func TestRemoveLastNode(t *testing.T) {
 	lst := ListInit(CompareTo)
 	lst.ListAdd(allocData(1)) // Add one element to the list
@@ -242,6 +247,10 @@ func TestEmptyList(t *testing.T) {
 	// Ensure sentinel pointers are intact
 	if lst.Head.Next != lst.Head || lst.Head.Prev != lst.Head {
 		t.Fatalf("Sentinel node pointers should point to itself in an empty list")
+	}
+
+	if removedData == nil {
+		fmt.Println("OUTPUT: Empty list removal returned nil as expected")
 	}
 }
 
